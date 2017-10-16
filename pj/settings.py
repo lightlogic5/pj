@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'users',
     'solutions',
     'workorders',
+    'userguid',
+    'operations',
     'xadmin',
     'crispy_forms',
 ]

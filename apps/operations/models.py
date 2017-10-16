@@ -3,7 +3,20 @@ from django.db import models
 from datetime import datetime
 
 from workorders.models import workord
+from users.models import UserProfile
+from userguid.models import userguid,possession
 # Create your models here.
+
+class employs(models.Model):
+    '员工设备信息'
+    username = models.ForeignKey(UserProfile, verbose_name=u"员工姓名")
+    guid = models.ForeignKey(userguid, verbose_name=u"设备id")
+    unit = models.ForeignKey(possession, verbose_name=u"所在单位")
+
+    class Meta:
+        verbose_name = u"员工设备"
+        verbose_name_plural = verbose_name
+
 
 
 class ordComments(models.Model):
